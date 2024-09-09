@@ -203,7 +203,7 @@ contract StableJoeStaking is Initializable, OwnableUpgradeable {
      * @return The reward debt for the chosen token
      */
     function getUserInfo(address _user, IERC20Upgradeable _rewardToken) external view returns (uint256, uint256) {
-        UserInfo storage user = userInfo[_user];
+        UserInfo memory user = userInfo[_user];
         return (user.amount, user.rewardDebt[_rewardToken]);
     }
 
